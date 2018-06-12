@@ -20,8 +20,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode development",
-    "build": "webpack --env production"
+    "start": "webpack --env.dev development",
+    "build": "webpack --env.prod production"
   },
   "repository": {
     "type": "git",

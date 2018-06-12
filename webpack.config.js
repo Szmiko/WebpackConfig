@@ -2,15 +2,13 @@ const path = require('path');
 
 module.exports = (env) => {
 	const environment = env;
-	return {
+
+	if (environment === env.prod) {
 		mode: 'production',
 		entry: './src/index.js',
 		output: {
 			path: path.resolve(__dirname, 'build'),
 			filename: 'app.' + production + 'bundle.js'
-		},
-		optimization: {
-			minimize: false
 		},
 		module: {
 			rules: [
@@ -32,12 +30,7 @@ module.exports = (env) => {
 				}
 			]
 		}
-	};
-};
-
-module.exports = (mode) => {
-	const environment = mode;
-	return {
+	} if else (environment === env.dev) {
 		mode: 'development',
 		entry: './src/index.js',
 		output: {
@@ -66,6 +59,6 @@ module.exports = (mode) => {
 					]
 				}
 			]
-		}
-	};
+		}	
+	} ;
 };
